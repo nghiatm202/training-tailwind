@@ -1,0 +1,1 @@
+"use strict";var hamburgerIcon=document.querySelector(".hamburger-icon");hamburgerIcon.addEventListener("click",function(){hamburgerIcon.classList.toggle("fa-x")});
