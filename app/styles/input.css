@@ -2,10 +2,62 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: gray;
+  }
+
   .layout-container {
     max-width: 1330px;
     margin: 0 auto;
     padding: 0 15px;
+  }
+
+  @media (max-width: 1399.98px) {
+    .layout-container {
+      max-width: 1050px;
+    }
+  }
+
+  @media (max-width: 1199.98px) {
+    .layout-container {
+      max-width: 850px;
+    }
+  }
+
+  @media (max-width: 991.98px) {
+    .layout-container {
+      max-width: 650px;
+    }
+  }
+}
+
+@layer components {
+  .sidebar-sub-menu-list {
+    @apply flex flex-col ml-3;
+  }
+
+  .sidebar-menu-item {
+    @apply flex items-center justify-between py-3;
+  }
+
+  .sidebar-bottom-item {
+    @apply flex py-3 transition-all duration-300 hover:text-green-300 hover:translate-x-2;
+  }
+
+  .sidebar-sub-menu-item {
+    @apply py-2 transition-all duration-300 hover:text-green-300 hover:translate-x-2;
+  }
+
+  .menu-item {
+    @apply flex items-center gap-x-2 transition-all duration-300 relative hover:text-green-300 before:absolute before:bg-transparent before:top-6 before:w-full before:h-full;
+  }
+
+  .sub-menu-item {
+    @apply px-2 py-3 rounded flex items-center gap-x-2 transition-all duration-300 whitespace-nowrap;
   }
 }

@@ -1,0 +1,1 @@
+"use strict";window.onscroll=function(){var d=window.scrollY/(document.body.offsetHeight-window.innerHeight),d=(Math.round(100*d),360*d);document.querySelector(".bg").style.background="conic-gradient(#0EA5EA "+d/2+"deg, #0BD1D1 "+d+"deg , #ddd "+d+"deg)"};

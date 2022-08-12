@@ -1,23 +1,25 @@
-// Slick slider
-// $(document).ready(function () {
-//   $(".quote-list").slick({
-//     prevArrow:
-//       "<button type='button' class='slick-prev pull-left'><i class='fal fa-angle-left' aria-hidden='true'></i></button>",
-//     nextArrow:
-//       "<button type='button' class='slick-next pull-right'><i class='fal fa-angle-right' aria-hidden='true'></i></button>",
-//     responsive: [
-//       {
-//         breakpoint: 767,
-//         settings: {
-//           arrows: false,
-//         },
-//       },
-//     ],
-//   });
-// });
-
-const hamburgerIcon = document.querySelector('.hamburger-icon');
+const hamburgerIcon = document.querySelector('.hamburger-icon')
+const sidebarSubMenuList = document.querySelectorAll('.sidebar-sub-menu-list')
+const chevronIcon = document.querySelectorAll('.fa-chevron-down')
+const sidebarMenuItem = document.querySelectorAll('.sidebar-menu-item')
+const sidebar = document.querySelector('.sidebar')
 
 hamburgerIcon.addEventListener('click', () => {
-    hamburgerIcon.classList.toggle('fa-x');
-});
+    hamburgerIcon.classList.toggle('fa-times')
+    sidebar.classList.toggle('hidden')
+    sidebar.classList.toggle('block')
+})
+
+sidebarMenuItem.forEach((item, index) => {
+    item.addEventListener('click', () => {
+        chevronIcon[index].classList.toggle('fa-chevron-up')
+        if (item.style.color) {
+            item.style.color = ''
+        } else {
+            item.style.color = 'rgb(134 239 172)'
+        }
+        sidebarSubMenuList[index].classList.toggle('hidden')
+        sidebarSubMenuList[index].classList.toggle('block')
+    })
+
+})
